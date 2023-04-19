@@ -2,8 +2,6 @@
 
 ![logo spring boot](src/main/resources/assets/spring-boot.png "logo spring boot")
 
-## [ ----> [View demo](https://elmiriyounes.github.io/Pokemons/) <---- ]
-
 ## About-the-project 🚀
 
 This is a spring boot project building an API connected to a database mysql.
