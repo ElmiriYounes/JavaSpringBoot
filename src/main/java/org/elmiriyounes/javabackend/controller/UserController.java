@@ -73,6 +73,10 @@ public class UserController {
 			throw new InvalidParameterException("All fields are null: at least one field should not be null (email, lastname, firstname, password)");
 		}
 
+		if(editedStudent.areAnyFieldEmpty()){
+			throw new InvalidParameterException("There is an empty value!");
+		}
+
 		if(!editedStudent.getAdditionalPropsWarning().isEmpty()){
 			throw new InvalidRequestBodyException("Please retry to send your request without: [" +
 					String.join(", ", editedStudent.getAdditionalPropsWarning())+

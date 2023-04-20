@@ -123,10 +123,9 @@ public class AuthorizeRoleFilter extends OncePerRequestFilter {
 
 				if(
 						roles.contains(new SimpleGrantedAuthority("TEACHER"))
-								&& !username.equals(emailPathVariable)
 								&& userDetails.getAuthorities().contains(new SimpleGrantedAuthority("TEACHER"))
 				){
-					throw new InvalidRoleException("As teacher, you can't modify the account of another teacher");
+					throw new InvalidRoleException("Editing teacher's account is not allowed");
 				}
 			}catch (UsernameNotFoundException ex){
 				sendJsonError(

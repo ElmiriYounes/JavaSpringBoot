@@ -43,4 +43,11 @@ public class UpdateStudentDTO {
 		return email == null && firstname == null && lastname == null && password == null;
 	}
 
+	public boolean areAnyFieldEmpty() {
+		return (email != null && email.isEmpty())
+				|| (firstname != null && firstname.isEmpty())
+				|| (lastname != null && lastname.isEmpty())
+				|| (password != null && password.isEmpty());
+	}
+
 }
