@@ -1,14 +1,10 @@
 package org.elmiriyounes.javabackend.dto;
 
 import com.fasterxml.jackson.annotation.*;
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.JsonMappingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.apache.logging.log4j.Logger;
 import org.springframework.lang.Nullable;
 
 import javax.validation.constraints.*;
@@ -32,7 +28,8 @@ public class UpdateStudentDTO {
 	private String password;
 	private final List<String> additionalPropsWarning = new ArrayList<>();
 
-	// @JsonAnySetter = use this method when an attribute detected inside a JSON request doesn't exist
+	// @JsonAnySetter = use this method when an attribute detected inside a JSON
+	// request doesn't exist
 	// between the attributes of the class
 	@JsonAnySetter
 	private void setAdditionalProp(String name, Object value) {

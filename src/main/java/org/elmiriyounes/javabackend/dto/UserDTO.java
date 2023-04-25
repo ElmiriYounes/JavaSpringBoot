@@ -1,7 +1,6 @@
 package org.elmiriyounes.javabackend.dto;
 
 import lombok.*;
-import org.elmiriyounes.javabackend.entity.Course;
 import org.elmiriyounes.javabackend.entity.Role;
 
 import java.util.List;

@@ -3,19 +3,12 @@ package org.elmiriyounes.javabackend.service.impl;
 import lombok.AllArgsConstructor;
 import org.elmiriyounes.javabackend.dto.LoginRequestDTO;
 import org.elmiriyounes.javabackend.dto.LoginResponseDTO;
-import org.elmiriyounes.javabackend.entity.User;
 import org.elmiriyounes.javabackend.repository.UserRepository;
 import org.elmiriyounes.javabackend.service.AuthenticationService;
 import org.elmiriyounes.javabackend.service.JwtService;
-import org.elmiriyounes.javabackend.service.UserService;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-
-import java.util.Collections;
-import java.util.Objects;
-import java.util.Optional;
 
 @Service
 @AllArgsConstructor
@@ -24,7 +17,6 @@ public class AuthenticationServiceImpl implements AuthenticationService {
 	private final AuthenticationManager authenticationManager;
 	private final UserRepository userRepository;
 	private final JwtService jwtService;
-
 
 	@Override
 	public LoginResponseDTO authenticate(LoginRequestDTO login) {

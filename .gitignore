@@ -1,10 +1,7 @@
 HELP.md
-/src/test/
 
 /target/*
 !/target/*.jar
-
-/src/main/resources/application.properties
 
 mvnw
 mvnw.cmd

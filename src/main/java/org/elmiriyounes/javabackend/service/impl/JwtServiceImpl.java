@@ -24,6 +24,7 @@ public class JwtServiceImpl implements JwtService {
 
 	@Value("${secret_key}")
 	private String secretKey;
+
 	@Override
 	public String extractUsername(String token) {
 
@@ -40,7 +41,7 @@ public class JwtServiceImpl implements JwtService {
 	@Override
 	public String generateToken(UserDetails userDetails) {
 		Map<String, Object> claims = new HashMap<>();
-		if(!userDetails.getAuthorities().isEmpty()){
+		if (!userDetails.getAuthorities().isEmpty()) {
 			List<String> authorities = userDetails.getAuthorities().stream()
 					.map(Object::toString)
 					.collect(Collectors.toList());
@@ -100,9 +101,20 @@ public class JwtServiceImpl implements JwtService {
 	}
 
 	public List<SimpleGrantedAuthority> extractAuthorities(String token) {
-		Claims claims = Jwts.parser().setSigningKey(secretKey).parseClaimsJws(token).getBody();
+		Claims claims = Jwts.parserBuilder().setSigningKey(secretKey).build().parseClaimsJws(token).getBody();
+
+		/**
+		 * claims.get("authorities", List.class) generates warning:
+		 * Type safety: The expression of type List needs unchecked conversion to
+		 * conform to
+		 * List<String>Java(16777748). But we know that it will return a List of String
+		 * so
+		 * we ignore the warning by this annotation
+		 **/
+		@SuppressWarnings("unchecked")
 		List<String> authorities = claims.get("authorities", List.class);
 
 		return authorities.stream().map(SimpleGrantedAuthority::new).collect(Collectors.toList());
 	}
+
 }

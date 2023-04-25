@@ -5,11 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.elmiriyounes.javabackend.entity.Course;
-import org.elmiriyounes.javabackend.entity.Role;
 
 import javax.validation.constraints.*;
-import java.beans.ConstructorProperties;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -40,7 +37,8 @@ public class CreateStudentDTO {
 
 	private final List<String> additionalPropsWarning = new ArrayList<>();
 
-	// @JsonAnySetter = use this method when an attribute detected inside a JSON request doesn't exist
+	// @JsonAnySetter = use this method when an attribute detected inside a JSON
+	// request doesn't exist
 	// between the attributes of the class
 	@JsonAnySetter
 	private void setAdditionalProp(String name, Object value) {
