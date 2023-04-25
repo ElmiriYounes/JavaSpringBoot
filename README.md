@@ -69,6 +69,7 @@ Atfer cloning the repository, you just have to tape the following 2 commands (in
     docker-compose build
     docker-compose up -d
     ```
+    
 :warning: : you must have dcoker installed in your machine, if not:
 * [Install docker for windows](https://docs.docker.com/desktop/install/windows-install/)
 * [Install docker for mac](https://docs.docker.com/desktop/install/mac-install/)
