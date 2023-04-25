@@ -7,6 +7,7 @@ import org.elmiriyounes.javabackend.entity.User;
 
 import java.nio.file.AccessDeniedException;
 import java.util.List;
+import java.util.Optional;
 
 public interface UserService {
 	List<UserDTO> getAllUsers();

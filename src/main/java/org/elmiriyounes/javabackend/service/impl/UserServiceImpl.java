@@ -16,6 +16,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.nio.file.AccessDeniedException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -30,7 +31,7 @@ public class UserServiceImpl implements UserService {
 	private final PasswordEncoder passwordEncoder;
 	@Override
 	public List<UserDTO> getAllUsers() {
-		var users = userRepository.findAll();
+		List<User> users = userRepository.findAll();
 
 		return createUsersDTO(users);
 	}
@@ -94,7 +95,7 @@ public class UserServiceImpl implements UserService {
 			throw new DataIntegrityViolationException("Student already exists");
 		}
 
-		if(userRepository.countByRole(Role.STUDENT) == 4){
+		if(userRepository.countByRole(Role.STUDENT) == 10){
 			throw new DataIntegrityViolationException("the limit for adding students has been reached (max 10)");
 		}
 

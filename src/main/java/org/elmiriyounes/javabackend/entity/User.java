@@ -5,8 +5,6 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.hibernate.FetchMode;
-import org.hibernate.annotations.Fetch;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -24,19 +22,31 @@ import java.util.List;
 public class User implements UserDetails {
 
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
+
+	@Column(nullable = false)
 	private String lastname;
+
+	@Column(nullable = false)
 	private String firstname;
+
+	@Column(nullable = false, unique = true)
 	private String email;
+
+	@Column(nullable = false)
 	private String password;
+
 	@Enumerated(EnumType.STRING)
+	@Column(nullable = false)
 	private Role role;
 
 	@OneToMany(mappedBy = "teacher")
+	@JsonIgnore // Ignorer la propriété "coursesAsTeacher" lors de la sérialisation JSON évitant récursivité quand on appel un user qui a un sourse qui a u user qui a un course ....
 	private List<Course> coursesAsTeacher;
 
 	@ManyToMany(mappedBy = "students")
+	@JsonIgnore // Ignorer la propriété "coursesAsStudent" lors de la sérialisation JSON
 	private List<Course> coursesAsStudent;
 
 	@Override

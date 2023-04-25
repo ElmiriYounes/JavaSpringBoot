@@ -151,9 +151,11 @@ public class GlobalExceptionHandler {
 
 	@ExceptionHandler(Exception.class)
 	public ErrorDTO handleException(Exception ex) {
+		System.out.println(ex.getMessage());
+
 		ErrorDTO errors = ErrorDTO.builder()
-				.status(HttpStatus.UNAUTHORIZED)
-				.code(401)
+				.status(HttpStatus.FORBIDDEN)
+				.code(403)
 				.error(ex.getMessage())
 				.message(ex.getMessage())
 				.build();

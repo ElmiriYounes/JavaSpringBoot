@@ -118,7 +118,7 @@ public class AuthorizeRoleFilter extends OncePerRequestFilter {
 						roles.contains(new SimpleGrantedAuthority("STUDENT"))
 								&& !username.equals(emailPathVariable)
 				){
-						throw new InvalidRoleException("As student, you can't modify the account of another user");
+					throw new InvalidRoleException("As student, you can't modify the account of another user");
 				}
 
 				if(
