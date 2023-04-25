@@ -64,7 +64,7 @@ There are students added by a teacher who can:
 * teacher 2: "email":"profB@gmail.com", "password":"profB"
 
 ## Run the project 🚀
-Atfer cloning the repository, you just have to tape the following 2 commands (in the root of the project):
+Atfer cloning the repository, you just have to type the following 2 commands (in the root of the project):
 
     docker-compose build
     
