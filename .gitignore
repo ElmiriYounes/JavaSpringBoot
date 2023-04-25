@@ -4,6 +4,8 @@ HELP.md
 /target/*
 !/target/*.jar
 
+/src/main/resources/application.properties
+
 mvnw
 mvnw.cmd
 .mvn
