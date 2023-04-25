@@ -65,6 +65,7 @@ There are students added by a teacher who can:
 
 ## Run the project 🚀
 Atfer cloning the repository, you just have to tape the following 2 commands (in the root of the project):
+
     ```gitbash
     docker-compose build
     ```
