@@ -10,11 +10,13 @@ services:
     depends_on:
       - mysqldb
   mysqldb:
+    # platform: linux/amd64 = to make this image compatible with all platforms
+    platform: linux/amd64
     image: "mysql:8.0.33-debian"
     container_name: mysqldb
     restart: always
     ports:
-      - 3306:3306
+      - 3307:3306
     environment:
       MYSQL_DATABASE: school
       MYSQL_USER: user
