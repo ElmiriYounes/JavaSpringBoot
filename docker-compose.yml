@@ -10,8 +10,8 @@ services:
     depends_on:
       - mysqldb
   mysqldb:
-    # platform: linux/amd64 = to make this image compatible with all platforms
-    platform: linux/amd64
+    # platform: multi-platform = to make this image compatible with all platforms
+    platform: multi-platform
     image: "mysql:8.0.33-debian"
     container_name: mysqldb
     restart: always
