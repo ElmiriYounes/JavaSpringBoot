@@ -10,9 +10,9 @@ services:
     depends_on:
       - mysqldb
   mysqldb:
-    # platform: multi-platform = to make this image compatible with all platforms
-    platform: multi-platform
     image: "mysql:8.0.33-debian"
+    # to detect automatacally the platform of the local machine
+    platform: ${TARGETPLATFORM}
     container_name: mysqldb
     restart: always
     ports:
