@@ -32,7 +32,7 @@
 - [Contact](#contact)
 
 
-## About-the-project 🚀
+## About-the-project
 
 This is a spring boot project building an API connected to a database mysql.
 
@@ -63,7 +63,7 @@ There are students added by a teacher who can:
 * teacher 1: "email":"profA@gmail.com", "password":"profA"
 * teacher 2: "email":"profB@gmail.com", "password":"profB"
 
-## Run the project 🚀
+## Run the project
 Atfer cloning the repository, you just have to type the following 2 commands (in the root of the project):
 
     docker-compose build
@@ -224,13 +224,13 @@ Restart the machine and verify with: docker --version
 * RequestBody (Body raw JSON): not required
 * Authorization (Bearer token): required (token getting from /auth/login)
 
-## ⚡️ Clone the repo
+## Clone the repo
 
 * Clone the repository:
     ```gitbash
     git clone git@github.com:ElmiriYounes/JavaSpringBoot.git
     ```
 
-## 💬 Contact
+## Contact
 
 El miri younes - elmiri.younes@hotmail.com
